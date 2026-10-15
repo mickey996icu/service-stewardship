@@ -6,6 +6,11 @@
 
 ## 安装
 
+```sh
+git clone https://github.com/mickey996icu/service-stewardship.git
+cd service-stewardship
+```
+
 从本仓库根目录，将 `skills/service-stewardship` 整个目录复制到宿主支持的 skills 目录。保留 `references/`。例如 Codex 的用户目录：
 
 ```sh

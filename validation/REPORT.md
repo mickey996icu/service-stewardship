@@ -56,7 +56,16 @@ No host discovery, model behavior, scheduling, or exhaustive secret scan is veri
 
 ## 发布状态
 
-本地独立 Git 仓库已创建。公开创建和推送尚未完成：当前环境没有可用 GitHub CLI、环境令牌或 Git credential helper 凭据，当前可用浏览器显示未登录。未建立远端，不编造仓库 URL。安装说明可从本地仓库执行；认证恢复后再进行公开创建和推送，并核对可见性与提交 SHA。
+首次本地交付时，公开创建和推送因缺少认证受阻。随后用户完成 GitHub CLI 设备认证，已于 2026-10-16 创建并推送 [公开仓库](https://github.com/mickey996icu/service-stewardship)。未将令牌或设备验证码写入仓库。
+
+实际核查：
+
+- GitHub API 返回 `visibility: PUBLIC`、默认分支 `main`、许可证 `MIT`。
+- 不带认证的 GitHub API 请求成功，返回 `private: false`。
+- 首次远端 `main` 和 `s1-local-ready` 均为 `f9e23e7b39aad12dedcb18fe1157275e7aa6ccda`，与当时本地 HEAD 一致。
+- 后续发布说明提交及 `s1-done` 标签在最终推送时再次比较远端引用与本地 HEAD；最终 SHA 以 Git 历史与该标签为准，避免文档自引用。
+
+这只验证开源交付与仓库状态，不改变上述模型行为与真实工具的实测限制。
 
 ## 最终本地检查
 
@@ -68,4 +77,4 @@ No host discovery, model behavior, scheduling, or exhaustive secret scan is veri
 Skill is valid!
 ```
 
-`git diff --check` 无错误输出。人工审阅未发现私人案例、真实用户标识、绝对本机路径、凭据或生产配置；公开作者与书籍作者信息作为学术来源保留。Git 作者使用项目通用署名，未沿用本机个人 Git 身份。安装包仅含 skill 目录及其来源/许可证，未安装到当前用户环境。公开发布仍因认证不可用受阻。
+`git diff --check` 无错误输出。人工审阅未发现私人案例、真实用户标识、绝对本机路径、凭据或生产配置；公开作者与书籍作者信息作为学术来源保留。Git 作者使用项目通用署名，未沿用本机个人 Git 身份。安装包仅含 skill 目录及其来源/许可证，未安装到当前用户环境。公开发布阻塞已由用户完成认证后解除。
