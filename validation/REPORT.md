@@ -60,4 +60,12 @@ No host discovery, model behavior, scheduling, or exhaustive secret scan is veri
 
 ## 最终本地检查
 
-skill 单独携带 LICENSE 与 NOTICE，复制安装不会丢失权利声明。最终记录将在最后一次静态检查后更新；未安装到当前用户环境。公开发布仍因认证不可用受阻。
+skill 单独携带 LICENSE 与 NOTICE，复制安装不会丢失权利声明。最终运行输出：
+
+```text
+Package checks passed: 16 files inspected; 11 local links; isolated copy verified.
+No host discovery, model behavior, scheduling, or exhaustive secret scan is verified.
+Skill is valid!
+```
+
+`git diff --check` 无错误输出。人工审阅未发现私人案例、真实用户标识、绝对本机路径、凭据或生产配置；公开作者与书籍作者信息作为学术来源保留。Git 作者使用项目通用署名，未沿用本机个人 Git 身份。安装包仅含 skill 目录及其来源/许可证，未安装到当前用户环境。公开发布仍因认证不可用受阻。
